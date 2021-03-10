@@ -16,7 +16,7 @@
   <script>
     $(document).ready(function () {
       $('#fullpage').fullpage({
-	      menu: '#pcnav',
+	      menu: '#pcnav ul',
         anchors: ['AboutMe', 'Skill', 'Work', 'Accessibility', 'Contact'],
         sectionsColor: ['transparent', '#000000', 'coral', 'grey', 'blue'],
         onLeave: function (origin, destination, direction) {
@@ -36,7 +36,7 @@
       })
     
       // About me 버튼을 클릭하면 배경 비디오 태그 실행시키기
-      $('#pcnav li').eq(0).children().on('click', function () {
+      $('#pcnav ul li').eq(0).children().on('click', function () {
         $('#main_video').get(0).play();
       });
     });
@@ -53,32 +53,32 @@
       </button>
       <nav id="pcnav">
         <ul>
-          <li class="dep1">
-            <a href="">
+          <li class="dep1" data-menuanchor="AboutMe" class="active">
+            <a href="#AboutMe">
               <strong>A</strong>bout me<br>저를 소개합니다
               <span class="nav_img1"></span>
             </a>
           </li>
-          <li class="dep2">
-            <a href="">
+          <li class="dep2" data-menuanchor="Skill">
+            <a href="#Skill">
               <strong>S</strong>kill<br>작업스킬
               <span class="nav_img2"></span>
             </a>
           </li>
-          <li class="dep3">
-            <a href="">
+          <li class="dep3" data-menuanchor="Work">
+            <a href="#Work">
               <strong>W</strong>ork<br>작업물
               <span class="nav_img3"></span>
             </a>
           </li>
-          <li class="dep4">
-            <a href="">
+          <li class="dep4" data-menuanchor="Accessibility">
+            <a href="#Accessibility">
               <strong>A</strong>ccessibillity<br>웹 접근성
               <span class="nav_img4"></span>
             </a>
           </li>
-          <li class="dep5">
-            <a href="">
+          <li class="dep5" data-menuanchor="Contact">
+            <a href="#Contact">
               <strong>C</strong>ontact<br>연락처
               <span class="nav_img5"></span>
             </a>
@@ -172,6 +172,12 @@
             </div>
           </div>
         </div>
+      </section>
+      <section class="section" id="cnt4">
+        <h1>1</h1>
+      </section>
+      <section class="section" id="cnt5">
+        <h1>2</h1>
       </section>
       <div class="section fp-auto-height">
         <footer id="footer">
