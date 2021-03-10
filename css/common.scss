@@ -1,5 +1,5 @@
 @charset "utf-8";
-// @import "_var", "_mixin", "_function";
+@import  "_mixin";
 
 @font-face{
   font-family: ntSansKR;
@@ -67,6 +67,7 @@ header, nav, section, footer{display: block;}
 .f_r{float: right;}
 .p_r{position: relative;}
 .p_a{position: absolute;}
+.bgColorB{background: #000000 !important;}
 .clearfix::after{content: "";display: block;clear: both;}
 .blind{position: absolute;width: 1px;height: 1px;overflow: hidden;border: none;margin: -1px;clip: rect(1px 1px 1px 1px);clip-path: inset(50%);}
 /* common class */

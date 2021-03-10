@@ -17,7 +17,8 @@
       }
   #first_txt_box{
     position: absolute;top: 0;left: 0;z-index: 2;margin: 180px 0 0 283px;
-    h1{width: 535px;height: 118px; margin-bottom: 22px;font-size: 60px;color: #ffffff; font-family: Arial; font-weight: 700;text-shadow: 1px 1px 5px #000000;}
+    h1{width: 535px;height: 118px; margin-bottom: 22px;font-size: 60px;color: #ffffff; font-family: Arial; font-weight: 700;text-shadow: 1px 1px 5px #000000;
+     }
     p{font-weight: 700;margin: 21px 0 28px 0;font-size: 24px;color: #ffffff;text-shadow: 1px 1px 5px #000000;}
     #realTime{font-family: LAB-Digital;font-size: 36px;  line-height: 1.3;letter-spacing: 0em; width: 210px; height: 29px;color: #ffffff;text-shadow: 1px 1px 3px #fffb1c;}
   }};
@@ -27,35 +28,57 @@
       position: relative;top: 0;left: 0; margin: 180px 0 0 283px;
       h1{width: 535px;height: 118px; margin-bottom: 26px;font-size: 60px;color: #ffffff; font-family: Arial; font-weight: 700;text-shadow: 1px 1px 5px #000000;}
       .sub_title{font-weight: 700;font-size: 24px;color: #ffffff;text-shadow: 1px 1px 5px #000000;}
-      p{display: block;margin-top: 80px;font-size: 18px;line-height: 1.67;font-weight: 700;color: #ffffff;text-align: left;}
-
-     #skill_box{
-       position: relative;margin-top: 60px;width: 210px;
-       .icon_box1{
-         position: relative;;display: flex;justify-content: space-between;margin-top:18px;height: 30px;
-         .photo{
-           width: 30px;display: inline-block;
-          img{width: 30px;};
-         };
-        .gr_bar{
-          width: 170px;height: 14px;margin: 9px 0 0 8px;background: #dc8424;
-          span{
-            margin-left: 10px;color: #000000
-         }
-       }
+      .intro_txt{display: block;margin-top: 80px;font-size: 18px;line-height: 1.67;font-weight: 700;color: #ffffff;text-align: left;}
+      // modal
+      #modal_box{
+        position: relative; display:inline-block; width: 118px; height: 28px; margin-top: 25px; text-align: center;
+        &::before, &::after,
+        > a::after, > a::before{content: "";position: absolute;background: #ffffff;transition: all 0.2s;}
+        &::before, &::after{width: 0;height: 1px;};
+        &::before{left: 0;top: 0;transition-delay: 0.6s;};
+        &::after{right: 0;bottom: 0;transition-delay: 0.2s;};
+        &:hover,&:focus {transition-delay: 0.8s;background: #ffffff;};
+        .modal_titleTxt{
+          display: inline-block;text-align: left;color: #ffffff; font-size: 10px;font-weight: 600;line-height: 30px; vertical-align: middle;
+          &::before{top: 0;right: 0;transition-delay: 0.4s;};
+          &::after{bottom: 0;left: 0;transition-delay: 0s;};
+          &::before, &::after{height: 0;width: 1px};
+          &:hover,&:focus {transition-delay: 0.8s ;color:#575757}
+        };
+        &:hover::before, &:focus::before, &:hover::after, &:focus::after, &:hover .modal_titleTxt::before, &:focus .modal_titleTxt::before, &:hover .modal_titleTxt::after, &:focus .modal_titleTxt::after{transition: all 0.2s;};
+        &:hover::before, &:focus::before, &:hover::after, &:focus::after{width: 100%;};
+        &:hover .modal_titleTxt::before, &:focus .modal_titleTxt::before, &:hover .modal_titleTxt::after, &:focus .modal_titleTxt::after{height: 100%;};
+        &:hover::before, &:focus::before{transition-delay: 0s;};
+        &:hover::after, &:focus::after{transition-delay: 0.4s;};
+        &:hover .modal_titleTxt::before, &:focus .modal_titleTxt::before{transition-delay: 0.2s;};
+        &:hover .modal_titleTxt::after, &:focus .modal_titleTxt::after{transition-delay: 0.6s;};
     };
-   };
   };
   .right{
     @include transform(translate(-40%, -40%));
     @include radius(50%);
     position:absolute;top: 50%;right: 0;width: 600px;height: 600px;overflow: hidden;
-    // modal
-    #img_modal{};
     .selfi_box{
       @include bgsize(cover);
       @include transform(scale(1));
-      width: 100%;height: 100%;background: url(../images/myselfi/IMG_7823.jpg) no-repeat center;
+      @include transform(translate(0, 0));
+      width: 100%;height: 100%;background: url(../images/myselfi/IMG_7823\ copy.jpg) no-repeat center;
     }
   };
-};
+
+}
+#cnt3{
+  #skill_box{
+    position: relative;margin-top: 60px;width: 210px;
+    .icon_box1{position: relative;display: flex;justify-content: space-between;margin-top:18px;height: 30px;
+      .photo{
+        width: 30px;display: inline-block;
+        img{width: 30px;}
+        }
+      .gr_bar{
+        width: 170px;height: 14px;margin: 9px 0 0 8px;background: #dc8424;
+        span{margin-left: 10px;color: #000000;}
+      }
+    }
+    }
+  }
